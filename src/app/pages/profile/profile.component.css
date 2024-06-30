@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  word-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 93vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.student-info {
+  height: 255px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.student-info h2 {
+  word-wrap: nowrap;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(102, 117, 128);
+}
+
+.student-information {
+  display: flex;
+  gap: 35px;
+}
+
+.student-photo {
+  text-align: center;
+}
+
+.student-photo a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.student-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.student-photo a {
+  word-wrap: nowrap;
+  display: block;
+  font-size: 13px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.student-details p {
+  word-wrap: nowrap;
+  margin: 5px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(102, 117, 128);
+}
+
+.student-details p span {
+  word-wrap: nowrap;
+  font-weight: 700;
+  color: rgb(72, 84, 92);
+}
+
+.reminders {
+  display: flex;
+  align-items: center;
+  background-color: #e0fbff;
+  padding: 20px;  
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.reminders img{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-left: 60px;
+}
+
+.reminders p {
+  word-wrap: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4da1e8;
+}
+
+.reminder-details  {
+  display: flex;
+}
+
+.reminder-details a{
+  word-wrap: nowrap;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 13px;
+}
+
+.reminder-details a:hover{
+  color: #0056b3;
+  text-decoration: underline;
+}

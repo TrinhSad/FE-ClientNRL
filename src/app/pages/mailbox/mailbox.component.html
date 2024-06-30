@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <app-menu></app-menu>
+    </div>
+    <div class="col-md-10">
+      <div class="student-info">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="margin: 0;">Yêu cầu sinh viên</h2>
+          <div>
+            <button class="btn btn-secondary" (click)="goPropose()">Tạo mới</button>
+          </div>
+        </div>
+        <hr>
+        <p style="color: #777777; font-size: 14px;">Để có thể <b>Minh chứng / Khiếu nại</b>, sinh viên vui lòng truy cập vào chi tiết chương trình ở <b>Tin tức / Chọn chương trình</b> và chọn mục <b>Minh chứng / Khiếu nại</b> hoặc điền <b style="color:#b5473f;">mã chương trình</b> vào form nhập thông tin <b>Minh chứng / Khiếu nại</b>.</p>
+        <p style="color: #777777; font-size: 14px;"><b>Lưu ý:</b> Chỉ áp dụng với những trường hợp liên quan đến chương trình có <b>Minh chứng</b>.</p>
+        <br>
+        <p style="color: #3F51B5; font-weight: 700;">Nhật ký hoạt động</p>
+        <div *ngFor="let proposal of currentProposals" class="student-information">
+          <div class="student-photo">
+            <img
+              src="{{ proposal.images && proposal.images.length > 0 ? proposal.images[0] : '../../../assets/images/program-img.png' }}"
+              alt="Student Photo">
+          </div>
+          <div class="student-details">
+            <p>Biểu mẫu đề xuất sinh viên - <span>{{ proposal.updatedAt | date: 'dd/MM/yyyy' }}</span></p>
+            <div class="details-footer">
+              <span style="padding-top: 15px">Trạng thái: <i style="color: #3F51B5; font-weight: 700;">{{ proposal.status }}</i> --- Thể loại: <i
+                  style="color: #b5473f; font-weight: 700;">{{ proposal.type }}</i></span>
+              <a class="notifi-detail" (click)="showProposalDetails(proposal)">Xem chi tiết</a>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="currentProposals.length < proposals.length" class="view-more">
+          <button class="btn btn-secondary" (click)="loadMore()">Xem thêm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedProposal" class="overlay">
+  <div class="window">
+    <a class="closePopup" (click)="closeProposalDetails()"><img src="../../../assets/images/close.png" alt=""></a>
+    <div class="proposal-details">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="detail-photo">
+              <img
+                src="{{ selectedProposal.images && selectedProposal.images.length > 0 ? selectedProposal.images[0] : '../../../assets/images/program-img.png' }}"
+                alt="Student Photo">
+            </div>
+            <div class="details-footer">
+              <span><i><img src="../../../assets/images/attach-file.png" alt="">File đính kèm</i></span>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="student-details">
+              <p>Thông tin chi tiết | <span>Ngày tạo: {{ selectedProposal.updatedAt | date: 'dd/MM/yyyy' }}</span></p>
+              <div class="details-footer">
+                <span>Mã sinh viên: <b style="color: #3F51B5;">{{ selectedProposal.MSSV }}</b></span>
+              </div>
+              <div class="details-footer">
+                <span>Mã chương trình: <b style="color: #3F51B5;">{{ selectedProposal.programId }}</b></span>
+              </div>
+              <div class="details-footer">
+                <span>Tên chương trình: <b style="color: #3F51B5;">{{ selectedProposal.programName }}</b></span>
+              </div>
+              <div class="details-footer">
+                <span>Trạng thái: <i style="color: #b5473f;">{{ selectedProposal.status }}</i></span>
+              </div>
+              <div class="details-footer">
+                <span>Thể loại đề xuất: <i style="color: #1DA1F2;">{{ selectedProposal.type }}</i></span>
+              </div>
+                <div class="form-group">
+                  <label for="proposalContent">Nội dung:</label>
+                  <textarea id="proposalContent" class="form-control" rows="5" readonly>{{ selectedProposal.content }}</textarea>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

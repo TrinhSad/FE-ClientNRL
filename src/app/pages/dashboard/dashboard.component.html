@@ -1,0 +1,83 @@
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-7">
+      <div class="student-info">
+        <h2>Thông tin sinh viên</h2>
+        <hr>
+        <div class="student-information">
+          <div class="student-photo">
+            <img src="../../../assets/images/user.png" alt="Student Photo">
+            <a [href]="VAA_URL + '/profile'">Xem chi tiết</a>
+          </div>
+          <div class="student-details">
+            <p>MSSV: <span>{{ studentInfo?.MSSV }}</span></p>
+            <p>Họ tên: <span>{{ studentInfo?.fullName }}</span></p>
+            <p>Giới tính: <span>{{ studentInfo?.gender }}</span></p>
+            <p>Ngày sinh: <span>{{studentInfo?.birthDay}}</span></p>
+            <p>Nơi sinh: <span>Thành Phố Hồ Chí Minh</span></p>
+          </div>
+          <div class="student-details">
+            <p>Lớp học: <span>21ĐHTT01/02</span></p>
+            <p>Khóa học: <span>Khóa 2021</span></p>
+            <p>Bậc đào tạo: <span>Đại học</span></p>
+            <p>Loại hình đào tạo: <span>Chính quy</span></p>
+            <p>Ngành: <span>{{ facultyName }}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="other-sections">
+        <div class="reminders">
+          <div class="reminder-content">
+            <p>Nhắc nhở mới, chưa xem</p>
+            <span class="notification-total">{{ totalNotification }}</span>
+            <div class="reminder-details">
+              <a [href]="VAA_URL + '/notification'">Xem chi tiết</a>
+            </div>
+          </div>
+          <img src="../../../assets/images/notification1.png" alt="">
+        </div>
+        <div class="schedule">
+          <div class="schedule-content">
+            <p>Trang sinh viên</p>
+            <div class="schedule-details">
+              <a href="https://sv.vaa.edu.vn/">Xem chi tiết</a>
+            </div>
+          </div>
+          <img src="../../../assets/images/logo-vaa.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="actions">
+        <a [href]="VAA_URL + '/news'">
+          <img src="../../../assets/images/program.png" alt="Xem chương trình">
+          <p>Xem chương trình</p>
+        </a>
+        <a [href]="VAA_URL + '/result'">
+          <img src="../../../assets/images/results1.png" alt="Kết quả rèn luyện">
+          <p>Kết quả rèn luyện</p>
+        </a>
+        <a [href]="VAA_URL + '/mailbox'">
+          <img src="../../../assets/images/proof.png" alt="Minh chứng">
+          <p>Minh chứng</p>
+        </a>
+        <a [href]="VAA_URL + '/mailbox'">
+          <img src="../../../assets/images/report.png" alt="Khiếu nại">
+          <p>Khiếu nại</p>
+        </a>
+        <a [href]="VAA_URL + '/notification'">
+          <img src="../../../assets/images/notification.png" alt="Nhắc nhở">
+          <p>Nhắc nhở</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

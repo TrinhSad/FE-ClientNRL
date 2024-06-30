@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="student-info">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="margin: 0; cursor: pointer;">Tin tức chương trình - Đăng ký chương trình</h2>
+        </div>
+        <hr>
+        <div *ngFor="let program of getCurrentPagePrograms()" class="student-information">
+          <div class="student-photo">
+            <img [src]="program.image" alt="Program Image">
+          </div>
+          <div class="student-details">
+            <p (click)="goToProgramDetails(program._id)">{{ program.programName }} - <span>{{ formatDate(program.updatedAt) }}</span></p>
+            <div class="details-footer">
+              <span><b>Đối tượng tham gia</b>: Sinh viên Học viện Hàng không Việt Nam</span>
+            </div>
+            <div class="details-footer">
+              <span><b>Số lượng đăng ký</b>: {{ program.quantity }}</span>
+            </div>
+            <div class="details-footer">
+              <span><b>Quyền lợi</b>: {{ program.point }} NRL</span>
+            </div>
+            <div class="details-footer">
+              <span><b>Ngày đăng ký</b>: <i style="color: #297ECA;">{{ formatDate(program.registerDate) }}</i></span>
+              <a class="notifi-detail" (click)="viewDetails(program._id)">Xem chi tiết</a>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <button *ngFor="let page of getPageNumbers()" (click)="onPageChange(page)"
+            [class.active]="page === currentPage">
+            {{ page }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

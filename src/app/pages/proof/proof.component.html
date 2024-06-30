@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <app-menu></app-menu>
+    </div>
+    <div class="col-md-10">
+      <div class="student-info">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="margin: 0;">Đề xuất minh chứng/khiếu nại</h2>
+          <div>
+            <button class="btn btn-primary" (click)="submitRequest()">Gửi yêu cầu</button>
+            <button class="btn btn-secondary" (click)="goHome()">Trở về</button>
+          </div>
+        </div>
+        <hr>
+        <div class="student-information">
+          <div class="information-propose col-md-3">
+            <p>Mã sinh viên:</p>
+            <p>Họ và tên:</p>
+            <p>Email:</p>
+            <p>Mã chương trình <span class="important" style="color:red">(*)</span></p>
+            <p>Chọn loại yêu cầu <span class="important" style="color:red">(*)</span></p>
+            <p>Diễn giải (nếu có)</p>
+            <p>File đính kèm <span class="important" style="color:red">(*)</span></p>
+          </div>
+          <div class="information-input col-md-9">
+            <p><span>{{ MSSV }}</span></p>
+            <p><span>{{ fullName }}</span></p>
+            <p><span>{{ MSSV }}&#64;vaa.edu.vn</span></p>
+            <p class="input-container">
+              <input type="text" class="form-control" placeholder="Nhập mã chương trình" [(ngModel)]="programId">
+            </p>
+            <p class="input-container">
+              <select class="form-control" aria-label="Chọn loại yêu cầu" [(ngModel)]="selectedType">
+                <option *ngFor="let type of requestTypes" [ngValue]="type.value">{{ type.name }}</option>
+              </select>
+              <img src="../../../assets/images/down.png" alt="Chọn thể loại">
+            </p>
+            <p>
+              <textarea class="form-control" placeholder="Nhập nội dung" rows="7" [(ngModel)]="content"></textarea>
+            </p>
+            <div class="file-upload">
+              <label for="file-upload" class="custom-file-upload">
+                <img src="../../../assets/images/attach-file.png" alt="Attach File Icon" class="attach-icon">Đính kèm
+              </label>
+              <input id="file-upload" type="file" accept="image/*, .pdf, .doc, .docx" (change)="onFileSelected($event)"/>
+            </div>
+            <div *ngIf="selectedFile" class="selected-file">
+              <p>File đã chọn: {{ selectedFile.name }}</p>
+              <span class="remove-file" (click)="removeSelectedFile()">X</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

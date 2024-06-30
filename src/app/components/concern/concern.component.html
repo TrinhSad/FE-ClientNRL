@@ -1,0 +1,15 @@
+<div class="student-info">
+  <p style="color: #667580; font-size: 19px; font-weight: 700;">Tin liên quan</p>
+  <hr>
+  <div class="student-information" *ngFor="let program of programs">
+    <div class="student-photo">
+      <img src="{{ program.image }}" alt="Hình ảnh chương trình">
+    </div>
+    <div class="student-details">
+      <p class="truncate" style="color: #297ECA; font-size: 14px;font-weight: 700; cursor: pointer;"
+        (click)="goToProgramDetail(program._id)">
+        {{ program.programName }}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <p style="font-size: 12px; font-weight: 400; margin: 5px 0 15px 0; color: #777777;">
+      Dashboard / Thông báo / <b>{{ program?.programName }}</b>
+    </p>
+    <div class="col-md-9">
+      <div class="student-info">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="margin: 0;">Chi tiết chương trình</h2>
+          <div class="buttons-group">
+            <button class="btn btn-secondary">Bản tin</button>
+          </div>
+        </div>
+        <hr>
+        <div class="details-footer">
+          <span><img src="../../../assets/images/id.png" alt=""><b>Mã chương trình:</b> {{ program?._id }}</span>
+        </div>
+        <br>
+        <div class="student-photo">
+          <img [src]="program?.image" alt="Student Photo">
+        </div>
+        <div class="student-information">
+          <div class="student-details">
+            <p>{{ program?.programName }}</p>
+            <p>Ngày đăng | {{ program?.createdAt | date:'dd/MM/yyyy' }}</p>
+            <div class="details-footer">
+              <span>{{ program?.description }}</span>
+            </div>
+            <div class="details-footer">
+              <span><img src="../../../assets/images/people.png" alt=""><b>Đối tượng tham gia</b>: Sinh viên Học viện Hàng không Việt Nam.
+              </span>
+            </div>
+            <div class="details-footer">
+              <span><img src="../../../assets/images/down-arrow.png" alt=""><b>Thông tin chi tiết</b>:
+              </span>
+            </div>
+            <div class="details-footer">
+              <span><img src="../../../assets/images/users.png" alt=""><b>Số lượng tối đa</b>: {{ program?.quantity }} sinh viên (đóng link khi đủ số lượng)</span>
+            </div>
+            <div class="details-footer">
+              <span><img src="../../../assets/images/clock.png" alt=""><b>Thời gian mở đăng ký</b>: {{ program?.registerDate | date:'dd/MM/yyyy' }}</span>
+            </div>
+            <div class="details-footer">
+              <span><img src="../../../assets/images/clock.png" alt=""><b>Thời gian chương trình bắt đầu</b>: {{ program?.startDate | date:'dd/MM/yyyy' }}</span>
+            </div>
+            <div class="details-footer">
+              <span><img src="../../../assets/images/benefit.png" alt=""><b>Quyền lợi</b>: {{ program?.point }} NRL</span>
+            </div>
+            <div class="details-footer">
+              <span><img src="../../../assets/images/uniform.png" alt=""><b>Trang phục</b>: Đồng phục học viện</span>
+            </div>
+            <div class="details-footer">
+              <span>Đăng ký nhưng không tham gia sẽ bị <b>trừ</b> ngày rèn luyện tương đương: <b style="color: #f44336;">{{ program?.minusPoint }}</b></span>
+            </div>
+            <div class="details-footer">
+              <span>Chương trình có áp dụng <b>Minh Chứng</b>: <b style="color: #f44336;">{{ program?.isPropose }}</b></span>
+            </div>
+            <div class="details-footer">
+              <span style="color: #1da1f2">#VAA #VSW #VAASOCIALWORK #ĐTNHSV #VAA #HVHKVN</span>
+            </div>
+            <div class="details-footer">
+              <span>🌻 Hãy theo dõi Fanpage - Học viện Hàng không Việt Nam để cập nhật những thông tin chính thức của các chương trình nhé!</span>
+            </div>
+            <div class="details-footer">
+              <span>Mọi thắc mắc xin vui lòng liên hệ với Ban tổ chức qua:</span>
+            </div>
+            <div class="details-footer">
+              <span> 📧 Email: doanhoikhoacntt&#64;vaa.edu.vn </span>
+            </div>
+            <div class="details-footer">
+              <span >Fanpage: <u><a href="https://www.facebook.com/doanhoikhoacnttvaa">https://www.facebook.com/doanhoikhoacnttvaa</a></u></span>
+            </div>
+          </div>
+        </div>
+        <div class="view-more">
+          <button class="btn btn-secondary" style="color: #105a88;" (click)="registerProgram()" [disabled]="!canRegister">Đăng ký tham gia</button>
+          <button class="btn btn-secondary" style="color: #777777; font-size: 14px; font-weight: 600;" (click)="navigateToPropose()">Minh chứng / Khiếu nại</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <app-concern></app-concern>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <app-menu></app-menu>
+    </div>
+    <div class="col-md-10">
+      <div class="student-info">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="margin: 0;">Ghi chú nhắc nhở</h2>
+          <div class="buttons-group">
+            <button class="btn btn-loc">Lọc bản tin</button>
+            <button class="btn btn-secondary">Mới & chưa xem</button>
+          </div>
+        </div>
+        <hr>
+        <div *ngFor="let notification of currentNotifications; let i = index" class="student-information" [ngClass]="{'read-notification': notification.isRead}">
+          <div class="student-photo">
+            <img src="../../../assets/images/program-img.png" alt="Student Photo">
+          </div>
+          <div class="student-details">
+            <p>{{ notification.notificationId.title }}</p>
+            <div class="details-footer">
+              <span *ngIf="notification.showMessage">{{ notification.notificationId.message }}</span>
+              <a *ngIf="!notification.showMessage" class="notifi-detail" (click)="toggleMessage(i)">Xem chi tiết</a>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="currentNotifications.length < notifications.length" class="view-more">
+          <button class="btn detail" (click)="loadMore()">Xem thêm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

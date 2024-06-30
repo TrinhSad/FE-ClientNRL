@@ -1,0 +1,27 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+app-header {
+  flex: 0 0 auto;
+  z-index: 1000;
+}
+
+app-menu{
+  position: absolute;
+  flex: 0 0 auto;
+  z-index: 1000;
+  top: 0px;
+}
+
+main {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-top: 47px;
+  padding: 47px 160px 0 160px;
+  background-color: rgba(102, 117, 128, 0.14);
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,35 @@
+<div class="menu-left-container" [class.open]="isOpen" >
+  <div class="sidebar col-md-9" [ngStyle]="{'background-color': selectedColor, 'color': textColor}">
+    <div class="menu-item">
+      <a [href]="VAA_URL + '/home'" [ngStyle]="{'color': textColor}">TRANG CHỦ</a>
+    </div>
+    <div class="menu-item">
+      <a (click)="toggleDropdown($event)" [ngStyle]="{'color': textColor}">THÔNG TIN CHUNG<img src="../../../assets/images/down.png" alt=""></a>
+      <div class="dropdown-container">
+        <a [href]="VAA_URL + '/result'" [ngStyle]="{'color': textColor}">
+          <p [ngStyle]="{'color': textColor}">KẾT QUẢ RÈN LUYỆN</p>
+        </a>
+        <a [href]="VAA_URL + '/notification'" [ngStyle]="{'color': textColor}">
+          <p [ngStyle]="{'color': textColor}">NHẮC NHỞ</p>
+        </a>
+      </div>
+    </div>
+    <div class="menu-item">
+      <a (click)="toggleDropdown($event)" [ngStyle]="{'color': textColor}">ĐỀ XUẤT SINH VIÊN<img src="../../../assets/images/down.png" alt=""></a>
+      <div class="dropdown-container">
+        <a [href]="VAA_URL + '/mailbox'" [ngStyle]="{'color': textColor}">
+          <p [ngStyle]="{'color': textColor}">MINH CHỨNG</p>
+        </a>
+        <a [href]="VAA_URL + '/mailbox'" [ngStyle]="{'color': textColor}">
+          <p [ngStyle]="{'color': textColor}">KHIẾU NẠI</p>
+        </a>
+      </div>
+    </div>
+    <div class="color-selector">
+      <div class="color-circle" *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"></div>
+    </div>
+  </div>
+  <div class="menu-right col-md-3" (click)="toggleMenu()">
+    <img src="../../../assets/images/menu.png" alt="Menu" class="menu-icon" />
+  </div>
+</div>

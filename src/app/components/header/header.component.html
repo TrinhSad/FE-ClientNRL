@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="header-left">
+    <div class="text-center">
+      <a [href]="VAA_URL + '/home'">
+        <img src="assets/images/logo-vaa.png" />
+      </a>
+    </div>
+  </div>
+  <div class="header-right">
+    <a [href]="VAA_URL + '/home'" class="home-link">
+      <img src="assets/images/home.png" alt="Home">
+      Trang chủ
+    </a>
+    <a [href]="VAA_URL + '/news'" class="notifications-link">
+      <img src="assets/images/notification.png" alt="Notifications">
+      Tin tức
+    </a>
+    <div class="user-profile" (click)="toggleDropdown($event)" (focus)="toggleDropdown($event)" tabindex="0">
+      <img src="assets/images/user.png" alt="User Profile" class="profile-picture">
+      <span class="user-name">{{ fullName }}</span>
+      <span class="dropdown-arrow"><img src="../../../assets/images/drop-down-arrow.png" alt="dropdown"></span>
+      <div class="dropdown-menu" [class.show]="dropdownVisible">
+        <a [href]="VAA_URL + '/profile'">Thông tin cá nhân</a>
+        <a (click)="openChangePasswordDialog()">Đổi mật khẩu</a>
+        <a (click)="logoutAccount()">Đăng xuất</a>
+      </div>
+    </div>
+  </div>
+</header>

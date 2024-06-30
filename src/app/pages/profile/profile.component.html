@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <app-menu></app-menu>
+    </div>
+    <div class="col-md-7">
+      <div class="student-info">
+        <h2>Thông tin sinh viên</h2>
+        <hr>
+        <div class="student-information">
+          <div class="student-photo">
+            <img src="../../../assets/images/user.png" alt="Student Photo">
+            <!-- <a href="http://localhost:4200/profile">Xem chi tiết</a> -->
+          </div>
+          <div class="student-details">
+            <p>MSSV: <span>{{ studentInfo?.MSSV }}</span></p>
+            <p>Họ tên: <span>{{ studentInfo?.fullName }}</span></p>
+            <p>Giới tính: <span>{{ studentInfo?.gender }}</span></p>
+            <p>Ngày sinh: <span>{{studentInfo?.birthDay}}</span></p>
+            <p>Nơi sinh: <span>Thành Phố Hồ Chí Minh</span></p>
+          </div>
+          <div class="student-details">
+            <p>Lớp học: <span>21ĐHTT01/02</span></p>
+            <p>Khóa học: <span>Khóa 2021</span></p>
+            <p>Bậc đào tạo: <span>Đại học</span></p>
+            <p>Loại hình đào tạo: <span>Chính quy</span></p>
+            <p>Khoa: <span>{{ facultyName }}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="other-sections">
+        <div class="reminders">
+          <div class="reminder-content">
+            <p>Nhật ký hoạt động</p>
+            <div class="reminder-details">
+              <a [href]="VAA_URL + '/result'">Xem chi tiết</a>
+            </div>
+          </div>
+          <img src="../../../assets/images/history.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

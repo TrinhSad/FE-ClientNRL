@@ -1,0 +1,180 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 93vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.student-info {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.student-info h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #578ebe;
+}
+
+.student-information {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.student-information .important{
+  color: red;
+}
+
+
+.information-propose p{
+  padding-top: 3px;
+}
+
+.col-md-3 p,
+.col-md-9 p {
+  margin: 0 0 25px 0;
+}
+
+.col-md-3 span{
+  color: red;
+}
+
+.student-details p,
+.student-info p {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(102, 117, 128);
+}
+
+.student-info p span {
+  font-weight: 700;
+  color: rgb(72, 84, 92);
+}
+
+.btn {
+  font-size: 14px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #d5dde2;
+  color: #1da1f2;
+}
+
+.btn-primary {
+  background-color: #1da1f2;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #1da1f2;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.form-control {
+  font-size: 14px;
+  padding: 8px 12px;
+  margin-right: 10px;
+  background-color: #f5f8fa;
+  border: 1px solid #e7ecf0;
+  border-radius: 0;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.form-control:focus,
+.form-control:hover {
+  border-color: #bbbbbb66;
+  box-shadow: none;
+}
+
+.form-control option {
+  border-radius: 0%;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(102, 117, 128);
+}
+
+.form-control option:hover {
+  background-color: #f5f8fa;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #0e5777;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.file-upload img {
+  width: 15px;
+  margin-right: 5px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #f5f8fa;
+}
+
+.input-container img {
+  width: 20px;
+  margin-right: 5px;
+  padding-top: 2px;
+  padding-right: 5px;
+}
+
+.selected-file {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #f5f8fa;
+  width: 55%;
+}
+
+.selected-file p {
+  margin: 0;
+}
+
+.remove-file {
+  font-weight: 600;
+  cursor: pointer;
+  color: red;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .student-information {
+    flex-direction: column;
+  }
+}

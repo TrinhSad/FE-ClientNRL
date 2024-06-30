@@ -1,0 +1,20 @@
+<div class="sidebar" [class.open]="isOpen" >
+  <div class="menu-item">
+    <a [href]="VAA_URL + '/home'">TRANG CHỦ</a>
+  </div>
+  <div class="menu-item">
+    <a (click)="toggleDropdown($event)">THÔNG TIN CHUNG<img src="../../../assets/images/down.png" alt=""></a>
+    <div class="dropdown-container">
+      <a [href]="VAA_URL + '/result'"><p>KẾT QUẢ RÈN LUYỆN</p></a>
+      <a [href]="VAA_URL + '/notification'"><p>NHẮC NHỞ</p></a>
+    </div>
+  </div>
+  <div class="menu-item">
+    <a (click)="toggleDropdown($event)">ĐỀ XUẤT SINH VIÊN<img src="../../../assets/images/down.png" alt=""></a>
+    <div class="dropdown-container">
+      <a [href]="VAA_URL + '/mailbox'"><p>MINH CHỨNG</p></a>
+      <a [href]="VAA_URL + '/mailbox'"><p>KHIẾU NẠI</p></a>
+    </div>
+  </div>
+</div>
+

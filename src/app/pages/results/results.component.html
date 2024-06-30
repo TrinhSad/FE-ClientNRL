@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <app-menu></app-menu>
+    </div>
+    <div class="col-md-10">
+      <div class="student-info">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="margin: 0;">Kết quả rèn luyện</h2>
+          <button class="btn btn-secondary">Tổng điểm: {{ totalPoints }} / 12 NRL</button>
+        </div>
+        <hr>
+        <div class="table">
+          <div class="table-header">
+            <div class="header__item"><p>STT</p></div>
+            <div class="header__item"><p>Mã chương trình</p></div>
+            <div class="header__item"><p>Trạng thái</p></div>
+            <div class="header__item"><p>Ngày đăng ký</p></div>
+            <div class="header__item"><p>Ngày tham gia</p></div>
+            <div class="header__item"><p>Quyền lợi</p></div>
+            <div class="header__item"></div>
+          </div>
+          <div *ngFor="let program of programs; let i = index" class="table-content">
+            <div class="header__item"><p>{{ i + 1 }}</p></div>
+            <div class="header__item"><p>{{ program.programId }}</p></div>
+            <div class="header__item"><p>{{ program.status }}</p></div>
+            <div class="header__item"><p><i>{{ program.registrationDate | date: 'dd/MM/yyyy' }}</i></p></div>
+            <div class="header__item"><p><i>{{ program.joiningDate | date: 'dd/MM/yyyy' }}</i></p></div>
+            <div class="header__item"><p>{{ program.programDetails.point }}</p></div>
+            <div class="header__item">
+              <button class="btn btn-secondary" (click)="showProgramDetails(program)">Xem chi tiết</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedProgram" class="overlay">
+  <div class="window">
+    <a class="closePopup" (click)="closeProgramDetails()"><img src="../../../assets/images/close.png" alt=""></a>
+    <div class="proposal-details">
+      <!-- Display detailed program information -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="student-details">
+            <p style="font-size: 18px; font-weight: 600;">Thông tin chi tiết</p>
+            <div class="details-footer">
+              <span>Mã chi tiết: <b style="color: #3F51B5;">{{ selectedProgram._id }}</b></span>
+            </div>
+            <div class="details-footer">
+              <span>Mã sinh viên: <b style="color: #667580;">{{ selectedProgram.MSSV }}</b></span>
+            </div>
+            <div class="details-footer">
+              <span>Mã chương trình: <b style="color: #667580;">{{ selectedProgram.programId }}</b></span>
+            </div>
+            <div class="details-footer">
+              <span>Tên chương trình: <b style="color: #3F51B5;">{{ selectedProgram.programDetails.programName }}</b></span>
+            </div>
+            <div class="details-footer">
+              <span>Ngày đăng ký: <i style="color: #667580;"><b>{{ selectedProgram.registrationDate | date: 'dd/MM/yyyy' }}</b></i></span>
+            </div>
+            <div class="details-footer">
+              <span>Trạng thái: <i style="color: #b5473f;"><b>{{ selectedProgram.status }}</b></i></span>
+            </div>
+            <div class="details-footer">
+              <span>Ngày tham gia: <b style="color: #667580;">{{ selectedProgram.joiningDate | date: 'dd/MM/yyyy' }}</b></span>
+            </div>
+            <div class="details-footer">
+              <span>Quyền lợi: <i style="color: #1DA1F2;"><b>{{ selectedProgram.programDetails.point }}</b></i></span>
+            </div>
+            <!-- Add more details as needed -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
