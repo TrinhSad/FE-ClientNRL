@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test",
+            "outputPath": "dist/FE-Client",
+            "baseHref": "/QuanLyNRL---Client/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
